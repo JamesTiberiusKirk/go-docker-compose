@@ -1,0 +1,6 @@
+services:
+  customapp:
+    build:
+      context: ./build-context
+    ports:
+      - "8082:80"

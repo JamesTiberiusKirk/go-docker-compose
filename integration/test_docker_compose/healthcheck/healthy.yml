@@ -1,0 +1,9 @@
+services:
+  hc-ok:
+    image: alpine:latest
+    command: ["sh","-c","(sleep 1; touch /tmp/ready); while true; do sleep 1; done"]
+    healthcheck:
+      test: ["CMD","test","-f","/tmp/ready"]
+      interval: 1s
+      timeout: 1s
+      retries: 10

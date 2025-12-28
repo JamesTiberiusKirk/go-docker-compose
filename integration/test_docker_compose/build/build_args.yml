@@ -1,0 +1,7 @@
+services:
+  app-with-build-arg:
+    build:
+      context: ./build-args-context
+      args:
+        CUSTOM_MESSAGE: "Message from build arg!"
+    image: custom_build_arg_image

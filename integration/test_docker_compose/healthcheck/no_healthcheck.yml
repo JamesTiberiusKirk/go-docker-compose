@@ -1,0 +1,4 @@
+services:
+  hc-none:
+    image: alpine:latest
+    command: ["sh","-c","tail -f /dev/null"]

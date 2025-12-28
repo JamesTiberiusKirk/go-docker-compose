@@ -1,0 +1,9 @@
+services:
+  srv1:
+    image: alpine:latest
+    depends_on:
+      - srv2
+
+  srv2:
+    image: alpine:latest
+

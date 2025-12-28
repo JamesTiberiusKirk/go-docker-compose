@@ -1,0 +1,7 @@
+services:
+  customapp_customtag:
+    build:
+      context: ./build-context
+    image: custom_build_image
+    ports:
+      - "8083:80"

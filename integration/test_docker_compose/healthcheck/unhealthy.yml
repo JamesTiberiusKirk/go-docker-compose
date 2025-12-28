@@ -1,0 +1,9 @@
+services:
+  hc-bad:
+    image: alpine:latest
+    command: ["sh","-c","while true; do sleep 1; done"]
+    healthcheck:
+      test: ["CMD","false"]
+      interval: 1s
+      timeout: 1s
+      retries: 3

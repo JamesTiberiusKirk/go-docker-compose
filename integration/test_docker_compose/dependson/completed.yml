@@ -1,0 +1,15 @@
+services:
+  migrate:
+    image: alpine:latest
+    volumes:
+      - ./.dep-completed:/signal
+    command: ["sh","-c","sleep 1; echo done >/signal/done; echo MIG_OK; exit 0"]
+
+  app:
+    image: alpine:latest
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+    volumes:
+      - ./.dep-completed:/signal
+    command: ["sh","-c","if test -f /signal/done; then echo APP_OK; tail -f /dev/null; else echo APP_FAIL; exit 51; fi"]

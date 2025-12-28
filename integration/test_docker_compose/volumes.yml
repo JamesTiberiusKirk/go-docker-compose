@@ -1,0 +1,5 @@
+services:
+  volume-test:
+    image: nginx
+    volumes:
+      - ./.docker-mount:/usr/share/nginx/html

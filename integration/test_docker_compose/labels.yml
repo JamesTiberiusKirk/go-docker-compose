@@ -1,0 +1,7 @@
+services:
+  label-test:
+    image: nginx
+    labels:
+      com.example.test: "true"
+      app.name: "label-test"
+      version: v1
